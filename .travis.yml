@@ -20,6 +20,7 @@ jobs:
               provide: script
               skip_cleanup: true
               script:
+                  - npm run build
                   - npx semantic-release
 
 
