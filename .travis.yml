@@ -3,5 +3,10 @@ node_js:
   - "6"
   - "8"
 cache: npm
-script: npm run test
+install:
+    - npm install -g codecov
+script: 
+    - npm run test
+    - npm run report-coverage
+    - codecov
 sudo: false

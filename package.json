@@ -7,7 +7,9 @@
   "scripts": {
     "test": "tape test/*.js | faucet && jsmd readme.md",
     "build": "rollup -c",
-    "lint": "eslint '*.js' --fix"
+    "lint": "eslint '*.js' --fix",
+    "coverage": "nyc npm run test",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
     "husky": "^3.0.7",
     "jsmd": "0.3.1",
     "lint-staged": "^9.4.0",
+    "nyc": "^14.1.1",
     "rollup": "^1.12.3",
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-node-resolve": "^5.0.0",
@@ -54,6 +57,15 @@
     "*.js": [
       "eslint"
     ]
+  },
+  "nyc": {
+    "all": false,
+    "check-coverage": true,
+    "excludeNodeModules": true,
+    "branches": 80,
+    "lines": 80,
+    "functions": 80,
+    "statements": 80
   },
   "dependencies": {
     "financial-arithmetic-functions": "~1.1.1"
