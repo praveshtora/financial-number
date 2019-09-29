@@ -6,6 +6,8 @@ test(`adding and subtracting`, t => {
 	t.equal(number(`12.12`).plus(`12.2`).minus(`12.000`).toString(), `12.320`)
 	t.equal(number(`-10`).plus(`10`).toString(), `0`)
 
+	t.equal(number(`-10`).plus(`10`).toString(), `0`)
+
 	t.end()
 })
 
