@@ -12,3 +12,14 @@ script:
     - npm run report-coverage
     - codecov
 sudo: false
+jobs:
+    include:
+        - stage: release
+          node_js: lts/*
+          deploy:
+              provide: script
+              skip_cleanup: true
+              script:
+                  - npx semantic-release
+
+
