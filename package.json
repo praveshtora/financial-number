@@ -33,6 +33,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@semantic-release/npm": "^5.1.15",
     "eslint": "^6.5.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
@@ -69,8 +70,25 @@
     "statements": 80
   },
   "release": {
-      "branch": "master",
-      "tagFormat":"${version}"
+    "branch": "master",
+    "analyzeCommits": {
+        "preset": "angular",
+        "releaseRules": [
+            {
+                "type": "docs",
+                "release":"patch"
+            },
+            {
+                "type": "refactor",
+                "release":"minor"
+            },
+            {
+                "type":"style",
+                "release": "patch"
+            }
+        ]
+    },
+    "tagFormat": "${version}"
   },
   "dependencies": {
     "financial-arithmetic-functions": "~1.1.1"
