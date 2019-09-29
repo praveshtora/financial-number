@@ -16,11 +16,13 @@ jobs:
     include:
         - stage: release
           node_js: lts/*
+          script: npm run build
           deploy:
-              provide: script
+              provider: npm
+              email: "$NPM_EMAIL"
+              api_key: "$NPM_TOKN"
               skip_cleanup: true
               script:
-                  - npm run build
                   - npx semantic-release
 
 
