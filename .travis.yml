@@ -18,7 +18,7 @@ jobs:
           node_js: lts/*
           script: npm run build
           deploy:
-              provider: npm
+              provider: script
               email: "$NPM_EMAIL"
               skip_cleanup: true
               script:
