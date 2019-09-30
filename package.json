@@ -91,6 +91,6 @@
     "tagFormat": "${version}"
   },
   "dependencies": {
-    "financial-arithmetic-functions": "~1.1.1"
+    "financial-arithmetic-functions": "~2.0.0"
   }
 }
